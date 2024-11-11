@@ -1,0 +1,14 @@
+.custom-container {
+  background-color: #f0f8ff !important; /* Replace with the desired color */
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+body {
+  background-image: url('./public/background-image.png');
+  background-size: cover;
+  background-position: center;
+}
