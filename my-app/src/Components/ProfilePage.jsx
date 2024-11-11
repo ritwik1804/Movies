@@ -30,7 +30,7 @@ function ProfilePage() {
 }
 
 const styles = {
-  container: { textAlign: 'center', padding: '20px' },
+  container: { textAlign: 'center', padding: '20px' }, 
   profileContainer: { display: 'flex', gap: '20px', justifyContent: 'center' },
   profile: { display: 'flex', flexDirection: 'column', alignItems: 'center' },
   emoji: { fontSize: '40px' },
