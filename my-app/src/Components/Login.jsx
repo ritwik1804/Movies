@@ -19,6 +19,7 @@ function Login() {
 
   return (
     <div style={styles.outerContainer}>
+      <div style={styles.overlay}></div> {/* Overlay */}
       <div style={styles.container}>
         <h2>Login</h2>
         <button onClick={handleGoogleLogin} style={styles.googleButton}>
@@ -48,17 +49,11 @@ const styles = {
     alignItems: 'center',
     minHeight: '100vh',
     width: '100vw',
-    backgroundImage: 'url(./background-image.png)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  },
-  overlay: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.6)', // Adjust overlay color and opacity as needed
+    backgroundImage: 'url(/background-image.png)',
+    backgroundSize: 'cover',       // Ensures the image fully covers the viewport
+    backgroundPosition: 'center',  // Centers the image
+    backgroundRepeat: 'no-repeat', // Prevents tiling
+    backgroundAttachment: 'fixed', // Fixes the background on scroll
   },
   container: {
     maxWidth: '400px',
@@ -68,11 +63,8 @@ const styles = {
     boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
     backgroundColor: 'white',
     borderRadius: '8px',
-  },
-  heading: {
-    fontSize: '28px',
-    marginBottom: '20px',
-    color: '#333',
+    position: 'relative', // Ensures proper layering over the background
+    zIndex: 1,
   },
   googleButton: {
     backgroundColor: '#4285F4',
@@ -85,11 +77,6 @@ const styles = {
     cursor: 'pointer',
     transition: 'background-color 0.3s ease',
     marginBottom: '20px',
-  },
-  orText: {
-    margin: '15px 0',
-    color: '#666',
-    fontSize: '14px',
   },
   form: {
     display: 'flex',
@@ -125,10 +112,6 @@ const styles = {
     fontSize: '14px',
     textDecoration: 'underline',
   },
-  footerText: {
-    marginTop: '20px',
-    color: '#666',
-  }
 };
 
 export default Login;
