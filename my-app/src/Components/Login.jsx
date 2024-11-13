@@ -1,20 +1,25 @@
+import { GoogleLogin } from '@react-oauth/google';
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
   const navigate = useNavigate();
 
-  const handleGoogleLogin = () => {
-    // Simulate successful login
-    alert('Google Login clicked');
-    navigate('/profile'); // Redirect to Profile page
+  const handleGoogleLoginSuccess = (response) => {
+    console.log("Google Login Success:", response);
+    // Navigate to the profile page on successful login
+    navigate('/profile');
+  };
+
+  const handleGoogleLoginFailure = (error) => {
+    console.error("Google Login Failed:", error);
+    alert("Google Login failed. Please try again.");
   };
 
   const handleEmailLogin = (e) => {
     e.preventDefault();
-    // Simulate successful email login
     alert('Login with Email & Password');
-    navigate('/profile'); // Redirect to Profile page
+    navigate('/profile');
   };
 
   return (
@@ -22,9 +27,10 @@ function Login() {
       <div style={styles.overlay}></div> {/* Overlay */}
       <div style={styles.container}>
         <h2>Login</h2>
-        <button onClick={handleGoogleLogin} style={styles.googleButton}>
-          Login with Google
-        </button>
+        <GoogleLogin
+          onSuccess={handleGoogleLoginSuccess}
+          onError={handleGoogleLoginFailure}
+        />
         <p>or</p>
         <form onSubmit={handleEmailLogin} style={styles.form}>
           <input type="email" placeholder="Email ID" style={styles.input} required />
