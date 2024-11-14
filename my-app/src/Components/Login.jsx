@@ -1,4 +1,4 @@
-import { GoogleLogin } from '@react-oauth/google';
+
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -27,10 +27,7 @@ function Login() {
       <div style={styles.overlay}></div> {/* Overlay */}
       <div style={styles.container}>
         <h2>Login</h2>
-        <GoogleLogin
-          onSuccess={handleGoogleLoginSuccess}
-          onError={handleGoogleLoginFailure}
-        />
+        
         <p>or</p>
         <form onSubmit={handleEmailLogin} style={styles.form}>
           <input type="email" placeholder="Email ID" style={styles.input} required />
