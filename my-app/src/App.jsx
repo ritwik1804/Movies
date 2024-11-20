@@ -4,28 +4,42 @@ import CreateAccount from './Components/CreateAccount';
 import CreateAccountForm from './Components/CreateAccountForm';
 import FamilyMemberProfile from './Components/FamilyMemberProfile';
 import Login from './Components/Login';
-import MovieDetails from './Components/ProfilePaage/MovieDetails';
-import ProfileMovies from './Components/ProfilePaage/ProfileMovies';
-import ProfilePage from './Components/ProfilePaage/ProfilePage';
+import Navbar from "./Components/Navbar/Navbar"; // Importing Navbar Component
+import NotFound from "./Components/NotFound";
+
+
 
 function App() {
   return (
-   
-    <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/create-account" element={<CreateAccount />} />
-      <Route path="/profile" element={<ProfilePage />} />
-      <Route path="/profile/:member" element={<FamilyMemberProfile />} />
-        <Route path="/create-account" element={<CreateAccountForm />} />
-        <Route path="/profile/:profileId" element={<ProfileMovies />} /> 
+    <>
+      {/* Navbar will appear on all pages */}
+      <Navbar />
+
+      {/* Define routes for the app */}
+      <Routes>
+        {/* Login Page */}
+        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+
+        {/* Create Account Pages */}
+        <Route path="/create-account" element={<CreateAccount />} />
+        <Route path="/create-account/form" element={<CreateAccountForm />} />
+
+        {/* Profile and Movie Pages */}
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/profile/:member" element={<FamilyMemberProfile />} />
+        <Route path="/profile/:profileId" element={<ProfileMovies />} />
         <Route path="/movie/:movieId" element={<MovieDetails />} />
-    </Routes>
-   
+
+        {/* Fallback Route */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
   );
 }
 
 export default App;
+
 
 
 

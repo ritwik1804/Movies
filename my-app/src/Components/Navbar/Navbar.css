@@ -1,0 +1,27 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #141414;
+  }
+  
+  .navbar-logo {
+    width: 100px;
+  }
+  
+  .navbar-links a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .navbar-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .profile-icon {
+    width: 30px;
+    border-radius: 50%;
+  }
+  

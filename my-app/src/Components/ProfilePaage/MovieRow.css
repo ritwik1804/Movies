@@ -1,0 +1,30 @@
+.movie-row {
+    margin: 20px 0;
+  }
+  
+  .row-title {
+    margin-left: 20px;
+    font-size: 1.5rem;
+  }
+  
+  .row-posters {
+    display: flex;
+    overflow-x: scroll;
+    padding: 20px;
+  }
+  
+  .row-posters::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .movie-poster {
+    width: 150px;
+    margin-right: 10px;
+    transition: transform 0.2s;
+    cursor: pointer;
+  }
+  
+  .movie-poster:hover {
+    transform: scale(1.1);
+  }
+  
